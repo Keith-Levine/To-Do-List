@@ -8,6 +8,7 @@ const thingsToDo = []
 const renderList = () => {
     const toDoItem = document.createElement('div')
     const completeBtn = document.createElement('button')
+    completeBtn.classList.add('complete-button')
     completeBtn.innerText = 'Completed'
     completeBtn.setAttribute('id', 'lists')
 
@@ -26,7 +27,7 @@ const renderList = () => {
         completeBtn.remove()
         
         const removeBtn = document.createElement('button')
-
+        removeBtn.classList.add('remove-button')
         removeBtn.innerText = 'Remove'
         toDoItem.append(removeBtn)
 
