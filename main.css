@@ -94,4 +94,5 @@ body {
 
 .submit-button:hover {
     border-color: pink;
+    color: white;
 }
