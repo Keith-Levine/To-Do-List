@@ -1,24 +1,38 @@
-console.log('hi')
-
 // Declare Variables 
 const submitButton = document.querySelector('#submitBtn')
 const todoContainer = document.querySelector('.todo')
+const completedDiv = document.querySelector('.completed')
+
+// Create Elements
+const removeBtn = document.createElement('button')
+let listItemDiv = document.createElement('div')
+let completeBtn = document.createElement('button')
 
 const todoArray = []
 
 // DOM manipulation to render items
 const renderList = () => {
-    let listItemDiv = document.createElement('div')
-    let createBtn = document.createElement('button')
-    createBtn.innerText = 'Completed'
-    createBtn.setAttribute('id', 'lists')
+    completeBtn.innerText = 'Completed'
+    completeBtn.setAttribute('id', 'lists')
 
     todoArray.forEach((item) => {
         listItemDiv.innerText = item
         listItemDiv.className = 'todo-item'
         todoContainer.append(listItemDiv)
-        listItemDiv.append(createBtn)
+        listItemDiv.append(completeBtn)
     })
+}
+
+completeBtn.onclick = () => {
+    completedDiv.append(listItemDiv)
+    listItemDiv.className = 'done-item'
+    completeBtn.remove()
+    removeBtn.innerText = 'Remove'
+
+    listItemDiv.append(removeBtn)
+    removeBtn.onclick = () => {
+        listItemDiv.remove()
+    }
 }
 
 submitButton.onclick = () => {
