@@ -44,3 +44,5 @@ submitButton.onclick = () => {
     document.querySelector('#input-box').value = ''
     renderList()
 }
+
+// KL
