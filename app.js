@@ -44,5 +44,3 @@ submitButton.onclick = () => {
     document.querySelector('#input-box').value = ''
     renderList()
 }
-
-// 4147788579942448
